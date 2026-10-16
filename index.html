@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello AI - 이영준 포트폴리오</title>
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --primary-hover: #1d4ed8;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border-color: #e2e8f0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        /* Header & Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid var(--border-color);
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--text-main);
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-menu a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Main Container */
+        main {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        section {
+            padding: 6rem 0 4rem 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        section:last-of-type {
+            border-bottom: none;
+        }
+
+        /* HOME Section */
+        #home {
+            min-height: 90vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .hero-title {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            color: var(--text-main);
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+        }
+
+        .hero-image-placeholder {
+            width: 100%;
+            max-width: 600px;
+            height: 300px;
+            background-color: var(--border-color);
+            border-radius: 12px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            font-size: 1rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 0.75rem 2rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.2s;
+        }
+
+        .btn:hover {
+            background-color: var(--primary-hover);
+        }
+
+        /* Section Titles */
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 2.5rem;
+            text-align: center;
+        }
+
+        /* ABOUT Section */
+        .about-content {
+            background: var(--card-bg);
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+
+        .about-intro {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .about-paragraphs {
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .card {
+            background: var(--bg-color);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+
+        .card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+
+        /* GALLERY / ACTIVITIES Section */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .activity-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+
+        .activity-img-placeholder {
+            width: 100%;
+            height: 180px;
+            background-color: var(--border-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .activity-body {
+            padding: 1.5rem;
+        }
+
+        .activity-body h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .activity-meta {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+        }
+
+        /* CONTACT Section */
+        #contact {
+            text-align: center;
+        }
+
+        .contact-box {
+            background: var(--card-bg);
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 3rem;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+
+        .contact-box p {
+            margin-bottom: 1.5rem;
+            color: var(--text-muted);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            border-top: 1px solid var(--border-color);
+            margin-top: 4rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.25rem;
+            }
+            .nav-menu {
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header & Navigation -->
+    <header>
+        <div class="nav-container">
+            <a href="#home" class="logo">Hello AI</a>
+            <ul class="nav-menu">
+                <li><a href="#home">HOME</a></li>
+                <li><a href="#about">ABOUT</a></li>
+                <li><a href="#gallery">GALLERY</a></li>
+                <li><a href="#contact">CONTACT</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <!-- HOME Section -->
+        <section id="home">
+            <h1 class="hero-title">안녕하세요. AI 를 같이 공유해요</h1>
+            <p class="hero-subtitle">AI를 배우고 공유하고 도움을 주는 사람, 이영준입니다.</p>
+            <div class="hero-image-placeholder">
+                [대표 사진 자리표시자]
+            </div>
+            <a href="#gallery" class="btn">구경하기</a>
+        </section>
+
+        <!-- ABOUT Section -->
+        <section id="about">
+            <h2 class="section-title">ABOUT ME</h2>
+            <div class="about-content">
+                <p class="about-intro">"저는 AI를 짝사랑 하는 사람입니다."</p>
+                <div class="about-paragraphs">
+                    <p><strong>① 활동:</strong> AI 기초부터 스터디 스타트하며 제2의 인생을 준비하고 있습니다.</p>
+                    <p><strong>② 관심사:</strong> 둘레길 걷기와 느낌 있는 카페 다니기를 즐겨 합니다.</p>
+                    <p><strong>③ 목표:</strong> AI를 배우고 공유하며 멋진 세계 여행을 해보고 싶습니다.</p>
+                </div>
+                
+                <div class="about-grid">
+                    <div class="card">
+                        <h3>내가 잘하는 것</h3>
+                        <p>성실하게 꾸준히 배우기</p>
+                    </div>
+                    <div class="card">
+                        <h3>내가 좋아하는 것</h3>
+                        <p>둘레길 걸은 후 카페에서 차 마시기</p>
+                    </div>
+                    <div class="card">
+                        <h3>요즘 배우고 있는 것</h3>
+                        <p>AI를 활용한 업무 개선</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- GALLERY Section -->
+        <section id="gallery">
+            <h2 class="section-title">GALLERY & ACTIVITIES</h2>
+            <div class="gallery-grid">
+                <!-- Activity 1 -->
+                <div class="activity-card">
+                    <div class="activity-img-placeholder">
+                        [양주지역 시니어 강의 사진]
+                    </div>
+                    <div class="activity-body">
+                        <h3>Hello AI</h3>
+                        <div class="activity-meta">강사 업무 수행 | 더욱 단단한 기초</div>
+                        <p>일주일에 3개 이상 AI 강의를 들으며 꾸준히 스터디를 진행하고 역량을 쌓고 있습니다.</p>
+                    </div>
+                </div>
+
+                <!-- Activity 2 -->
+                <div class="activity-card">
+                    <div class="activity-img-placeholder">
+                        [족구 동호회 대회 참석 사진]
+                    </div>
+                    <div class="activity-body">
+                        <h3>운동 (족구)</h3>
+                        <div class="activity-meta">매주, 고양시 | 동호회 부회장</div>
+                        <p>매주 고양시에서 동호회 부회장으로 활동하며 건강과 활력을 채우고 있습니다.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT Section -->
+        <section id="contact">
+            <h2 class="section-title">CONTACT</h2>
+            <div class="contact-box">
+                <p>방문해 주셔서 감사합니다. 아래 링크를 통해 소통하실 수 있습니다.</p>
+                <a href="http://www.daum.net" target="_blank" class="btn">웹사이트 방문하기</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Lee Young-jun. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
