@@ -205,15 +205,10 @@
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
         }
 
-        .activity-img-placeholder {
+        .activity-img {
             width: 100%;
-            height: 180px;
-            background-color: var(--border-color);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: var(--text-muted);
-            font-size: 0.9rem;
+            height: 220px;
+            object-fit: cover;
         }
 
         .activity-body {
@@ -330,11 +325,9 @@
         <section id="gallery">
             <h2 class="section-title">GALLERY & ACTIVITIES</h2>
             <div class="gallery-grid">
-                <!-- Activity 1 -->
+                <!-- Activity 1: 양주지역 시니어 강의 (첫 번째 사진 -> img1.jpg) -->
                 <div class="activity-card">
-                    <div class="activity-img-placeholder">
-                        [양주지역 시니어 강의 사진]
-                    </div>
+                    <img src="img1.jpg" alt="양주지역 시니어 강의 사진" class="activity-img">
                     <div class="activity-body">
                         <h3>Hello AI</h3>
                         <div class="activity-meta">강사 업무 수행 | 더욱 단단한 기초</div>
@@ -342,11 +335,9 @@
                     </div>
                 </div>
 
-                <!-- Activity 2 -->
+                <!-- Activity 2: 족구 동호회 대회 참석 (두 번째 사진 -> img2.jpg) -->
                 <div class="activity-card">
-                    <div class="activity-img-placeholder">
-                        [족구 동호회 대회 참석 사진]
-                    </div>
+                    <img src="img2.jpg" alt="족구 동호회 대회 참석 사진" class="activity-img">
                     <div class="activity-body">
                         <h3>운동 (족구)</h3>
                         <div class="activity-meta">매주, 고양시 | 동호회 부회장</div>
